@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class DoctorLogin extends HttpServlet {
 	Connection con = null;
@@ -41,7 +42,11 @@ public class DoctorLogin extends HttpServlet {
 			ps.setString(1,username);
 		    ps.setString(2, password);
 		    ResultSet rs=ps.executeQuery();
+		    HttpSession hs = request.getSession();
 		    if(rs.next()) {
+		    	hs.setAttribute("name", rs.getString("name"));
+		    	hs.setAttribute("id", rs.getInt(1));
+		    	hs.setAttribute("specalisation", rs.getString("specialisation"));
 		    	response.sendRedirect("./doctor_home.html");
 		    	System.out.println("Reached");
 		    }
