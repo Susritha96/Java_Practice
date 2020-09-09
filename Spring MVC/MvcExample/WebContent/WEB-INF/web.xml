@@ -1,0 +1,10 @@
+<web-app>
+<servlet>
+<servlet-name>mvc</servlet-name>
+<servlet-class>com.school.DoctorController</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>mvc</servlet-name>
+  <url-pattern>/doctor_login</url-pattern>
+</servlet-mapping>
+</web-app>
