@@ -1,0 +1,9 @@
+variables - tfvars
+data - ami 
+resources- ec2
+
+providers - aws
+
+output - what we should get out of this
+
+provisiner what to install with in app

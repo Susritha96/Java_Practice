@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="com.example.Vendor" table="vendor">
+<id name="vid" column="vid"></id>
+<property name="vname" column="vname"></property>
+<set name="c_obj" cascade="all">
+<key column="fkvid"/>
+<one-to-many class="com.example.Customer"/>
+</set>
+</class>
+
+</hibernate-mapping>
