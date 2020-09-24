@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">	
+<hibernate-mapping>
+<class name="com.ex.Student" table="student">
+<id name="sid" column="sid"/>
+<property name="sname" column="sname"/>
+<property name="marks" column="marks"></property>
+<set name="c_obj" cascade="all" table="student_course">
+<key column="s_id"/>
+<many-to-many class="com.ex.Course" column="c_id"/>
+</set>
+</class>
+</hibernate-mapping>
