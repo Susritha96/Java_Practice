@@ -1,0 +1,40 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+        
+        <beans>
+        <bean id="con" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/dell"/>
+        <property name="username" value="root"/>
+ 		<property name="password" value="root"/>
+        </bean>
+        
+        <bean id="sf" class ="org.springframework.orm.hibernate3.localSessionFactoryBean">
+		<property name="dataSource" ref="con"/>       
+        <property name="mappingResources" >
+        <list>
+        <value>student.xml</value>
+        </list>
+        </property>
+        <property name="hibernateProperties">
+        <props>
+        <prop key="hibernate.hbm2ddl.auto">update</prop>
+        <prop key="hibernate.show_sql">true</prop>
+        <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+        </props>
+        </property>  
+        </bean>
+        
+        
+        <bean id="hdt" class="org.springframework.orm.hibernate3.HibernateTemplate">     
+        <property name="sessionFactory" ref="sf"/>
+        </bean>
+        
+        <bean id="hto" class="com.jnit.SpringJdbcSelect">
+        <property name="ht">
+        <ref bean="hdt"/>
+        </property>
+        </bean>
+        </beans>
+       

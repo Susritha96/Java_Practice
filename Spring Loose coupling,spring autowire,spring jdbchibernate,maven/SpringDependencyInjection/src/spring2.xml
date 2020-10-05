@@ -1,0 +1,15 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+         
+        <beans> 
+        <bean id="travelob" class ="com.jnit.Travel">
+        <property name="v" >
+        <ref parent="audi"/>
+        </property>
+       
+        </bean>
+        </beans>
+        
+        
+        
+       

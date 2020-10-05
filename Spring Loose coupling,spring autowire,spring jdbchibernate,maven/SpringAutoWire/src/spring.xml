@@ -1,0 +1,20 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+        
+        <beans>
+        <bean id="cc" class ="com.EX.Category" autowire="autodetect">
+        <property name="cname" value="programming language"></property>
+        </bean>
+        <bean id="bk" class="com.EX.Book">
+         <property name="bname" value="Thinking in Java"></property>
+         <property name="bprice" value="323"></property>
+         <property name="bauthor" value="John"></property>
+        </bean>
+        
+        
+        </beans>
+        
+        
+        
+        
